@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 $CFILE && ./a.out > c && echo"" >> c 
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 $CFILE && ./a.out > c
