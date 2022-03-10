@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -S -Wall -Werror -Wextra -pedantic -std=gnu89 $CFILE && c=$(echo $CFILE | cut -c1) && cat $c*.s > c
