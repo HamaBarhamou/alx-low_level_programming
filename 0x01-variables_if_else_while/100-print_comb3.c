@@ -27,14 +27,18 @@ int main(void)
 	int d = 48;
 	int position_u = 48;
 	/* your code goes there */
-	while (d < 57)
+	while (d <= 56)
 	{
 		while(u <= 57)
 		{
 			putchar(d);
 			putchar(u);
-			putchar(',');
-			putchar(' ');
+			if (d != 56 || u != 57)
+			{
+				putchar(',');
+				putchar(' ');
+
+			}
 			u++;
 		}
 		d++;
