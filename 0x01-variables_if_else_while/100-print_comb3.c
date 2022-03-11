@@ -25,7 +25,7 @@ int main(void)
 {
 	int u = 49;
 	int d = 48;
-	int position_u = 48;
+	int position_u = 49;
 	/* your code goes there */
 	while (d <= 56)
 	{
