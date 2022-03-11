@@ -1,6 +1,6 @@
-# alx-low_level_programming
-0x00. C - Hello, World
-https://github.com/HamaBarhamou/ALX-Header
+# alx-low_level_programming </br> </br>
+
+https://github.com/HamaBarhamou/ALX-Header : project open source ALX-Header
 
 ## 0. Positive anything is better than negative nothing   </br>
 This program will assign a random number to the variable n each time it is executed. Complete the source code in order to print whether the number stored in the variable n is positive or negative.</br>
