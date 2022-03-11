@@ -29,7 +29,7 @@ int main(void)
 	/* your code goes there */
 	while (d <= 56)
 	{
-		while(u <= 57)
+		while (u <= 57)
 		{
 			putchar(d);
 			putchar(u);
@@ -42,7 +42,7 @@ int main(void)
 			u++;
 		}
 		d++;
-		position_u ++;
+		position_u++;
 		u = position_u;
 	}
 	putchar('\n');
