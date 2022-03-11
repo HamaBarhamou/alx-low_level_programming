@@ -28,7 +28,7 @@ int main(void)
 	/* your code goes there */
 	while (i < 26)
 	{
-		if (ch != 'q' &&  ch !='e')
+		if (ch != 'q' &&  ch != 'e')
 			putchar(ch);
 		ch++;
 		i++;
