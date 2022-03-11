@@ -25,14 +25,15 @@ int main(void)
 {
 	int i = 48;
 	/* your code goes there */
-	while (i < 57)
+	while (i <= 57)
 	{
 		putchar(i);
-		putchar(',');
+		if(i != 57)
+			putchar(',');
 		putchar(' ');
 		i++;
 	}
-	putchar(57);
+	putchar('\n');
 	return (0);
 }
 

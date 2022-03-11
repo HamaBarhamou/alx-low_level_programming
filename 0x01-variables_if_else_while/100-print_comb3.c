@@ -25,7 +25,7 @@ int main(void)
 {
 	int u = 49;
 	int d = 48;
-	int position_u=48;
+	int position_u = 48;
 	/* your code goes there */
 	while (d < 57)
 	{
@@ -33,10 +33,9 @@ int main(void)
 		{
 			putchar(d);
 			putchar(u);
-			u++;
-			if (d != 56)
-				putchar(',');
+			putchar(',');
 			putchar(' ');
+			u++;
 		}
 		d++;
 		position_u ++;
