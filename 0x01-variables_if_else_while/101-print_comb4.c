@@ -30,7 +30,7 @@ int main(void)
 	int position_d = d;
 	int position_uu = u;
 	/* your code goes there */
-	while(c <= 55)
+	while (c <= 55)
 	{
 		while (d <= 56)
 		{
