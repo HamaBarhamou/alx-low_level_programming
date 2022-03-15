@@ -15,10 +15,11 @@
 #include "main.h"
 
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
-*/
+ * print_alphabet -  prints the alphabet, in lowercase, followed by a new line
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 
 void print_alphabet(void)
 {
