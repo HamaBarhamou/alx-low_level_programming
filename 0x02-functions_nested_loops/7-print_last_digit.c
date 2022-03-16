@@ -25,13 +25,18 @@
  */
 int print_last_digit(int n)
 {
-	int r;
+	int a;
 
 	if (n < 0)
-		n = -1 * n;
-	r = n % 10;
-	putchar(r + '0');
-	printf(" hello \n");
-	return (r);
+		n = -n;
+
+	a = n % 10;
+
+	if (a < 0)
+		a = -a;
+
+	_putchar(a + '0');
+
+	return (a);
 }
 
