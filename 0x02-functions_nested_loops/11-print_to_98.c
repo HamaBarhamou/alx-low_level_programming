@@ -13,45 +13,36 @@
 */
 
 #include "main.h"
+#include<stdio.h>
 
 /**
- *times_table - a function that prints the 9 times table, starting with 0
- *starting from 00:00 to 23:59.
- *
- *Return: On success 1.
- *On error, -1 is returned, and errno is set appropriately.
+ * print_to_98 - prints all natural numbers from n to 98,
+ * followed by a new line
+ * @n: print from this number
  */
-void times_table(void)
+void print_to_98(int n)
 {
-	int i = 0, j = 0, k;
+	int i;
 
-	for (i = 0; i <= 9; i++)
+	if (n < 98)
 	{
-		for (j = 0; j <= 9; j++)
+		for (i = n; i < 98; i++)
 		{
-			k = i * j;
-			if (k <= 9)
-				_putchar(k + '0');
-			else
-			{
-				_putchar(k / 10 + '0');
-				_putchar(k % 10 + '0');
-			}
-			
-			if (j < 9)
-			{
-				_putchar(',');
-				if (k <= 9)
-				{
-					_putchar(' ');
-					_putchar(' ');
-				}
-				else
-					_putchar(' ');
-			}
+			printf("%d", i);
+			printf(",");
+			printf(" ");
 		}
-
-		_putchar('\n');
 	}
-}
+	else
+	{
+		for (i = n; i > 98; i--)
+		{
+			printf("%d", i);
+			printf(",");
+			printf(" ");
+		}
+	}
 
+	printf("98\n");
+
+}
