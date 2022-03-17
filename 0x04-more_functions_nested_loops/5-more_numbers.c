@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * more_numbers - a function print a number.
@@ -11,6 +12,8 @@ void more_numbers(void)
 
 	for (k = 1; k <= 10; k++)
 	{
+		/* Execution du code print_most_number */
+
 		for (i = 0; i <= 14; i++)
 		{
 			if (i <= 9)
@@ -21,6 +24,6 @@ void more_numbers(void)
 				_putchar(i % 10 + '0');
 			}
 		}
-		putchar('\n');
+		system("echo \"\"");
 	}
 }
