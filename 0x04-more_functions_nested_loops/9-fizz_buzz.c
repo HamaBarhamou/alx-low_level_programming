@@ -11,7 +11,7 @@ int main(void)
 {
 	int nb;
 
-	for (nb = 1; nb <= 100; nb++)
+	for (nb = 1; nb <= 99; nb++)
 	{
 		if (nb % 3 == 0)
 		{
@@ -31,5 +31,6 @@ int main(void)
 		else
 			printf("%d ", nb);
 	}
+	printf("Buzz\n");
 	return (0);
 }
