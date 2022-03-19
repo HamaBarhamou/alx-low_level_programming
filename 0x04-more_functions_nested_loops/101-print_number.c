@@ -18,11 +18,11 @@ void print_number(int n)
 		_putchar('-');
 	}
 
-	if(n > 0)
+	if (n / 10)
 	{
 		print_number(n / 10);
-		r = n % 10;
-		_putchar(r + '0');
 	}
-	
+	r = n % 10;
+	_putchar (r + '0');
+
 }
