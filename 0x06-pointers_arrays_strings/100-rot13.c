@@ -2,25 +2,26 @@
 
 /**
  * remplace13 - a function ...
- * @alpha: the chaine of caractere
- * @code: the chaine of caractere
- * @c: char
+ * @b: char
  *
  * Return: char
  */
 
-char remplace13(char *alpha, char *code, char c)
+char remplace13(char b)
 {
-	int i = 0;
-
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	/*ASCII 65 is A and 90 is Z*/
+	if ((b > 64) && (b < 91))
 	{
-		while (alpha[i] != c)
-			i++;
-		return (code[i]);
+		b = ((b - 65 + 13) % 26) + 65;
 	}
-	else
-		return (c);
+
+	/*ASCII 97 is a and 122 is z*/
+	if ((b > 96) && (b < 123))
+	{
+		b = ((b - 97 + 13) % 26) + 97;
+	}
+
+	return (b);
 }
 
 /**
@@ -33,12 +34,12 @@ char remplace13(char *alpha, char *code, char c)
 char	*rot13(char *str)
 {
 	int i = 0;
-	char alp[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char cde[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	/*char alp[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";*/
+	/*char cde[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";*/
 
 	while (str[i])
 	{
-		str[i] = remplace13(alp, cde, str[i]);
+		str[i] = remplace13(str[i]);
 		i++;
 	}
 	return (str);
