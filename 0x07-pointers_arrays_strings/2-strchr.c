@@ -22,13 +22,8 @@
 
 char *_strchr(char *s, char c)
 {
-	int i = 0;
-
-	while (s[i] && s[i] != c)
-		i++;
-	if (s[i])
-		return (&s[i]);
-	else
-		return (NULL);
+	for (; *s != '\0' && *s != c; ++s)
+		;
+	return (*s == c ? (char *) s : NULL);
 }
 
