@@ -1,7 +1,7 @@
 /*****************************************************************************/
 /*                                                                           */
 /*                                               _____  ______    ____  ___  */
-/* 8-print_diagsums.c                           /  _  \ |    |    \   \/  /  */
+/* 4-strpbrk.c                                  /  _  \ |    |    \   \/  /  */
 /*                                             /  /_\  \|    |     \     /   */
 /* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
 /*                                            \____|__  /_______ \/___/\  \  */
@@ -10,28 +10,31 @@
 /*                                                                           */
 /*****************************************************************************/
 
-#include <stdio.h>
+#include <string.h>
 
 /**
- * print_diagsums - a function ...
- * @a: the matrix
- * @size: the length of matrice
+ * _strpbrk - a function ...
+ * @s: the chaine
+ * @accept: the chaine
  *
  * Return: 1 or 0
  */
 
-
-void print_diagsums(int *a, int size)
+char *_strpbrk(char *s, char *accept)
 {
-	int	i =0, *ptr, j = 0;
-	
-	for (i = 0; i < size; i++)
+	if ((s == NULL) || (accept == NULL))
+		return (NULL);
+	while (*s)
 	{
-		ptr = a;
-		for (j = 0 ; j < size; j++)
-			printf("%d ",ptr[j]);
-		ptr++;
-		printf("\n");
+		if (strchr(accept, *s))
+		{
+			return (s);
+		}
+		else
+		{
+			s++;
+		}
 	}
+	return (NULL);
 }
 
