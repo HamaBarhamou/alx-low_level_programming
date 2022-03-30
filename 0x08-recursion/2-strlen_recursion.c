@@ -11,7 +11,6 @@
 /*****************************************************************************/
 
 #include "main.h"
-static int taille = 1;
 /**
 * _strlen_recursion - function
 *
@@ -21,6 +20,9 @@ static int taille = 1;
 
 int _strlen_recursion(char *s)
 {
+
+	static int taille = 1;
+
 	if (s[taille] != '\0')
 	{
 		taille++;
