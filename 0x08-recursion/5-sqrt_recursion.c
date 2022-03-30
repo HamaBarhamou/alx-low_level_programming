@@ -14,6 +14,7 @@
  * _sqrt - function
  * @n: the number
  * @i: the number
+ * Return: Always 0
  */
 
 int _sqrt(int n, int i)
