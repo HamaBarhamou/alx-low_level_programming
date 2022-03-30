@@ -21,7 +21,7 @@
 int _strlen_recursion(char *s)
 {
 
-	static int taille = 1;
+	static int taille;
 
 	if (s[taille] != '\0')
 	{
