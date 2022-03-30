@@ -11,7 +11,7 @@
 /*****************************************************************************/
 
 #include "main.h"
-int taille = 0;
+static int taille = 1;
 /**
 * _strlen_recursion - function
 *
