@@ -11,8 +11,38 @@
 /*****************************************************************************/
 
 #include<stdio.h>
-#include <stdlib.h>
 #define UNUSED(x) (void)(x)
+
+/**
+* ft_atoi - function
+*
+* @str: the chaine
+* Return: Always 0.
+*/
+
+int		ft_atoi(const char *str)
+{
+	int		n;
+	int		sign;
+
+	n = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\v' || *str == '\r' ||
+			*str == '\n' || *str == '\f')
+		str++;
+	sign = *str == '-' ? -1 : 1;
+	if (sign == -1 || *str == '+')
+		str++;
+	while (*str)
+	{
+		if (*str >= '0' && *str <= '9')
+			n = n * 10 + (*str - '0');
+		else
+			break;
+		str++;
+	}
+	return (n * sign);
+
+}
 
 /**
 * main - function
@@ -26,7 +56,7 @@ int main(int argc, char **argv)
 {
 	UNUSED(argc);
 
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	printf("%d\n", ft_atoi(argv[1]) * ft_atoi(argv[2]));
 	return (0);
 }
 
