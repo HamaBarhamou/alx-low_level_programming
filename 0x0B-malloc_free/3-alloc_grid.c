@@ -11,6 +11,7 @@
 /*****************************************************************************/
 
 #include<stdlib.h>
+#include<stdio.h>
 
 /**
  * alloc_grid - a function ...
@@ -27,7 +28,7 @@ int **alloc_grid(int width, int height)
 
 	if (width == 0 || height == 0)
 		return (NULL);
-	tableau2d = malloc(height * sizeof(int));
+	tableau2d = malloc(height * sizeof(int *));
 
 	if (tableau2d == NULL)
 		return (NULL);
