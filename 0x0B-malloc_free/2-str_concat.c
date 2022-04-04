@@ -11,6 +11,44 @@
 /*****************************************************************************/
 
 #include<stdlib.h>
+#include<stdio.h>
+
+#include<stdlib.h>
+
+/**
+* ft_strlen - a function
+* @str: the chaine
+*
+* Return: 1 or 0
+*/
+
+int ft_strlen(char *str)
+{
+	int i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
+
+/**
+* ft_strcpy - a functio
+* @src: the chaine
+*
+* Return: 1 or 0
+*/
+char *ft_strcpy(char *src)
+{
+	char *str = malloc((ft_strlen(src) + 1) * sizeof(char));
+	int i = 0;
+
+	while (src[i])
+	{
+		str[i] = src[i];
+		i++;
+	}
+	return (str);
+}
 
 /**
  * str_concat - a function ...
@@ -28,15 +66,12 @@ char  *str_concat(char *s1, char *s2)
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	if (s1 == NULL && s2 != NULL)
-		return (s2);
+		return (ft_strcpy(s2));
 	if (s1 != NULL && s2 == NULL)
-		return (s1);
+		return (ft_strcpy(s1));
 
-	while (s1[len1])
-		len1++;
-
-	while (s2[len2])
-		len2++;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	src = malloc((len1 + len2 + 1) * sizeof(char));
 	if (src != NULL)
 	{
@@ -56,4 +91,3 @@ char  *str_concat(char *s1, char *s2)
 	}
 	return (src);
 }
-
