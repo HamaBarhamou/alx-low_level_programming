@@ -32,6 +32,13 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; ++i)
 	{
 		tableau2d[i] = malloc(height * sizeof(int));
+		if (tableau2d[i] == NULL)
+		{
+			for(; i >= 0; i--)
+				free(tableau2d[i])
+			free(tableau2d);
+			return (NULL);
+		}
 	}
 
 	for (i = 0; i < height; ++i)
