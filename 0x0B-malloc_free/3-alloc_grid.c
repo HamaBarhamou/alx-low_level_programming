@@ -22,20 +22,23 @@
 
 int **alloc_grid(int width, int height)
 {
-	int **tableau2d = malloc(height * sizeof(int));
+	int **tableau2d;
 	int i, j;
 
 	if (width == 0 || height == 0)
 		return (NULL);
+	tableau2d = malloc(height * sizeof(int));
+
 	if (tableau2d == NULL)
 		return (NULL);
+
 	for (i = 0; i < height; ++i)
 	{
 		tableau2d[i] = malloc(height * sizeof(int));
 		if (tableau2d[i] == NULL)
 		{
-			for(; i >= 0; i--)
-				free(tableau2d[i])
+			for (; i >= 0; i--)
+				free(tableau2d[i]);
 			free(tableau2d);
 			return (NULL);
 		}
