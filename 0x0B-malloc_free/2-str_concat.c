@@ -65,15 +65,16 @@ char  *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	if (s1 == NULL && s2 != NULL)
-		return (ft_strcpy(s2));
-	if (s1 != NULL && s2 == NULL)
-		return (ft_strcpy(s1));
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	src = malloc((len1 + len2 + 1) * sizeof(char));
-	if (src != NULL)
+	if (src == NULL)
+		return (NULL);
 	{
 		while (s1[i])
 		{

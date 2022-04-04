@@ -16,7 +16,7 @@ int main(void)
 {
 	char *s;
 
-	/*s = str_concat("Hello", NULL);
+	s = str_concat("Hello", NULL);
 	if (s == NULL)
 	{
 		printf("failed\n");
@@ -41,7 +41,7 @@ int main(void)
 		return (1);
 	}
 	printf("%s\n", s);
-	free(s);*/
+	free(s);
     s = str_concat("Betty ", "Holberton");
     	if (s == NULL)
     	{
