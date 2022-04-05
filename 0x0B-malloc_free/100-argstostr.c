@@ -10,64 +10,43 @@
 /*                                                                           */
 /*****************************************************************************/
 
-#include<stdlib.h>
-#include<stdio.h>
-
+#include "main.h"
+#include <stdlib.h>
 /**
- * ft_strlen - a function
- * @str: the chaine
- *
- * Return: 1 or 0
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
-
-int ft_strlen(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
-
-/**
- * argstostr - a function ...
- * @ac: the number
- * @av: the list of arguments
- *
- * Return: 1 or 0
- */
-
 char *argstostr(int ac, char **av)
 {
-	int i = 0, taille = 0, k = 0, j = 0;
-	char *str, *p;
+	int i, n, r = 0, l = 0;
+	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
+
 	for (i = 0; i < ac; i++)
 	{
-		taille = taille + ft_strlen(av[i]);
+		for (n = 0; av[i][n]; n++)
+			l++;
 	}
+	l += ac;
 
-	str = malloc((taille + ac + 1) * sizeof(char));
-
+	str = malloc(sizeof(char) * l + 1);
 	if (str == NULL)
 		return (NULL);
-
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
-		p = av[i];
-		while (p[k])
-		{
-			str[j] = p[k];
-			k++;
-			j++;
-		}
-		str[j] = '\n';
-		j++;
-		k = 0;
+	for (n = 0; av[i][n]; n++)
+	{
+		str[r] = av[i][n];
+		r++;
+	}
+	if (str[r] == '\0')
+	{
+		str[r++] = '\n';
+	}
 	}
 	return (str);
 }
-
