@@ -52,6 +52,9 @@ char *argstostr(int ac, char **av)
 
 	str = malloc((taille + ac + 1) * sizeof(char));
 
+	if (str == NULL)
+		return (NULL);
+
 	for (i = 1; i < ac; i++)
 	{
 		p = av[i];
