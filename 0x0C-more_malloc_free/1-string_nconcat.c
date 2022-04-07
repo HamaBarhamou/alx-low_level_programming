@@ -1,7 +1,7 @@
 /*****************************************************************************/
 /*                                                                           */
 /*                                               _____  ______    ____  ___  */
-/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
+/* 1-string_nconcat                             /  _  \ |    |    \   \/  /  */
 /*                                             /  /_\  \|    |     \     /   */
 /* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
 /*                                            \____|__  /_______ \/___/\  \  */
@@ -10,74 +10,48 @@
 /*                                                                           */
 /*****************************************************************************/
 
-#include<stdlib.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
-* ft_strlen - a function
-* @str: the chaine
-*
-* Return: 1 or 0
-*/
-
-int ft_strlen(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-		i++;
-	return (i);
-}
-
-
-/**
- * string_nconcat - a function ...
- * @s1: the chaine
- * @s2: the chaine
- * @n: the number
+ * *string_nconcat - concatenates n bytes of a string to another string
+ * @s1: string to append to
+ * @s2: string to concatenate from
+ * @n: number of bytes from s2 to concatenate to s1
  *
- * Return: 1 or 0
+ * Return: pointer to the resulting string
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int arret, i = 0, j = 0;
-	unsigned int taille1, taille2;
-	char *str;
+	char *s;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	taille2 = ft_strlen(s2);
-	taille1 = ft_strlen(s1);
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-	str  = malloc(sizeof(char) * (taille1 + taille2 + 1));
+	if (n < len2)
+		s = malloc(sizeof(char) * (len1 + n + 1));
+	else
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
 
-	if (str == NULL)
+	if (!s)
 		return (NULL);
 
-	while (s1[i] != '\0')
+	while (i < len1)
 	{
-		str[j] = s1[i];
+		s[i] = s1[i];
 		i++;
-		j++;
 	}
 
-	if (s2 == NULL)
-	{
-		return (s1);
-	}
+	while (n < len2 && i < (len1 + n))
+		s[i++] = s2[j++];
 
-	i = 0;
+	while (n >= len2 && i < (len1 + len2))
+		s[i++] = s2[j++];
 
-	if (taille2 >= n)
-		arret =  n;
-	else
-		arret = taille2;
-	while (i <= arret)
-	{
-		str[j] =  s2[i];
-		i++;
-		j++;
-	}
-	str[j] = '\0';
-	return (str);
+	s[i] = '\0';
+
+	return (s);
 }
-
