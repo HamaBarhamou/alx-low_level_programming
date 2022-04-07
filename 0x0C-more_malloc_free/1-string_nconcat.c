@@ -42,10 +42,14 @@ int ft_strlen(char *str)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int arret, i = 0, j = 0;
-	unsigned int taille;
+	unsigned int taille1, taille2;
 	char *str;
 
-	str  = malloc(sizeof(char) * (ft_strlen(s1) + n + 1));
+	taille2 = ft_strlen(s2);
+	taille1 = ft_strlen(s1);
+
+	str  = malloc(sizeof(char) * (taille1 + taille2 + 1));
+
 	if (str == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -61,12 +65,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	i = 0;
-	taille = ft_strlen(s2);
 
-	if (taille >= n)
+	if (taille2 >= n)
 		arret =  n;
 	else
-		arret = taille;
+		arret = taille2;
 	while (i <= arret)
 	{
 		str[j] =  s2[i];
