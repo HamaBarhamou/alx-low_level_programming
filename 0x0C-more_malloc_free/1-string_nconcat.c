@@ -52,6 +52,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (str == NULL)
 		return (NULL);
+
 	while (s1[i] != '\0')
 	{
 		str[j] = s1[i];
@@ -59,10 +60,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		j++;
 	}
 
-	if (s2 == NULL)
+	/*if (s2 == NULL)
 	{
 		return (s1);
-	}
+	}*/
 
 	i = 0;
 
