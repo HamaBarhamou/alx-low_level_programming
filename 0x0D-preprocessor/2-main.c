@@ -20,14 +20,14 @@ int _putchar(char c)
  */
 int main(void)
 {
-	/*int i = 0;
+	int i = 0;
 
 	while (__FILE__[i])
 	{
 		_putchar(__FILE__[i]);
 		i++;
 	}
-	_putchar('\n');*/
-	printf("%s\n",__FILE__);
+	_putchar('\n');
+	/*printf("%s\n",__FILE__);*/
 	return (0);
 }
