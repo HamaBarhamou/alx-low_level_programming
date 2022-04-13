@@ -11,6 +11,7 @@
 /*****************************************************************************/
 
 #include<stddef.h>
+#include<stdlib.h>
 
 /**
  * int_index - a function ...
@@ -25,9 +26,11 @@ int int_index(int *array, size_t size, int (*cmp)(int))
 {
 	size_t i;
 
-	if (size <= 0 || array == NULL || cmp == NULL)
+	if (size <= 0)
 		return (0);
 
+	if (array == NULL || cmp == NULL)
+		exit(3);
 	for (i = 0; i < size; i++)
 	{
 		if ((*cmp)(array[i]))
