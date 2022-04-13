@@ -10,6 +10,7 @@
 /*                                                                           */
 /*****************************************************************************/
 
+#include<stddef.h>
 /**
  * print_name - a function ...
  * @name: the chaine
@@ -20,6 +21,8 @@
 
 void print_name(char *name, void (*f)(char *))
 {
+	if (f == NULL)
+		return;
 	(*f)(name);
 }
 
