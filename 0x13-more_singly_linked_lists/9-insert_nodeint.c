@@ -1,61 +1,45 @@
-/*****************************************************************************/
-/*                                                                           */
-/*                                               _____  ______    ____  ___  */
-/* 9-insert_nodeint.c                           /  _  \ |    |    \   \/  /  */
-/*                                             /  /_\  \|    |     \     /   */
-/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
-/*                                            \____|__  /_______ \/___/\  \  */
-/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
-/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
-/*                                                                           */
-/*****************************************************************************/
-
-#include <stdio.h>
 #include "lists.h"
-#include <stdlib.h>
-#include <string.h>
-
 
 /**
- * insert_nodeint_at_index - a function ...
- * @head: the list
- * @n: the chaine
- * @idx: the number
+ * insert_nodeint_at_index - inserts a new node in a linked list,
+ * at a given position
+ * @head: pointer to the first node in the list
+ * @idx: index where the new node is added
+ * @n: data to insert in the new node
  *
- * Return: 1 or 0
+ * Return: pointer to the new node, or NULL
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new, *ptr = *head, *save;
-	unsigned int cpt = 0;
+	unsigned int i;
+	listint_t *new;
+	listint_t *temp = *head;
 
-	new =  malloc(sizeof(listint_t));
-	if (new == NULL)
+	new = malloc(sizeof(listint_t));
+	if (!new || !head)
 		return (NULL);
 
 	new->n = n;
 	new->next = NULL;
 
-	if (ptr == NULL || idx == 0)
+	if (idx == 0)
 	{
+		new->next = *head;
 		*head = new;
-		return (*head);
+		return (new);
 	}
 
-	while (cpt != idx - 1 && ptr->next != NULL)
+	for (i = 0; temp && i < idx; i++)
 	{
-		ptr = ptr->next;
-		cpt++;
+		if (i == idx - 1)
+		{
+			new->next = temp->next;
+			temp->next = new;
+			return (new);
+		}
+		else
+			temp = temp->next;
 	}
 
-	if (ptr->next == NULL)
-		ptr->next = new;
-	else
-	{
-		save = ptr->next;
-		ptr->next = new;
-		new->next = save;
-	}
-	return (new);
+	return (NULL);
 }
-
