@@ -59,6 +59,7 @@ void rev_string(char *s)
 	int i = 0, taille, k;
 	char c;
 
+
 	while (s[i] != '\0')
 		i++;
 
@@ -106,6 +107,9 @@ unsigned int binary_to_uint(const char *b)
 {
 	int n = 0, i = 0, cpt = 0, test;
 	char c;
+
+	if (b == NULL)
+		return (0);
 
 	while (b[i])
 		i++;
