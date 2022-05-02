@@ -17,7 +17,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#define UNUSED(x) (void)(x)
+#define BUF_SIZE 4096
 
 /**
  * read_textfile - a function ...
@@ -29,7 +29,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fp, ret;
-	char buf[1024 + 1];
+	char buf[BUF_SIZE + 1];
 	size_t cpt = 1;
 
 	if (filename == NULL)
