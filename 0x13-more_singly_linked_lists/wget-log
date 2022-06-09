@@ -1,0 +1,11 @@
+--2022-05-13 23:25:06--  http://www.whatsgps.com/user/login.do?name=GPSDEMO
+Résolution de www.whatsgps.com (www.whatsgps.com)… 47.52.42.30
+Connexion à www.whatsgps.com (www.whatsgps.com)|47.52.42.30|:80… connecté.
+requête HTTP transmise, en attente de la réponse… 200 
+Taille : non indiqué [text/html]
+Enregistre : «login.do?name=GPSDEMO»
+
+login.do?name=GPSDEMO                               [<=>                                                                                                     ]       0  --.-KB/s               login.do?name=GPSDEMO                               [ <=>                                                                                                    ]      59  --.-KB/s    ds 0s      
+
+2022-05-13 23:25:08 (2,15 MB/s) - «login.do?name=GPSDEMO» enregistré [59]
+
