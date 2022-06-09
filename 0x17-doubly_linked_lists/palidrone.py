@@ -12,4 +12,4 @@ for num in range(999*999 + 1):
     if check_palindrome(str(num)):
         pali = num
 
-print(pali)
+print(pali, end="")
