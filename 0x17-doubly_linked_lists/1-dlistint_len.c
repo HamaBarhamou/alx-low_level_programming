@@ -13,7 +13,7 @@ size_t dlistint_len(const dlistint_t *h)
 	const dlistint_t *ptr;
 
 	if (h == 0)
-		return (nb)
+		return (nb);
 	/*Recherche de la tete de liste*/
 	if (h->prev != NULL)
 		while (h->prev != NULL)
