@@ -8,8 +8,9 @@ def check_palindrome(v):
     return False
 
 pali = 0
-for num in range(999*999 + 1):
-    if check_palindrome(str(num)):
-        pali = num
+for i in range(1000):
+    for j in range(1000):
+        if check_palindrome(str(i * j)):
+            pali = i * j
 
 print(pali, end="")
