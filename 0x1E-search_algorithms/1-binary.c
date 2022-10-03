@@ -28,6 +28,9 @@ int binary_search(int *array, size_t size, int value)
 	size_t L = 0, R = size - 1;
 	int m;
 
+	if (array == NULL)
+		return (-1);
+
 	while (L != R)
 	{
 		/*m = ceil((L + R) / 2);*/
